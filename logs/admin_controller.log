@@ -1,0 +1,2 @@
+[2025-11-02 23:44:28] Error en dashboard(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'railway.usuario_planes' doesn't exist
+[2025-11-05 15:43:44] Error en dashboard(): SQLSTATE[HY000]: General error: 2006 MySQL server has gone away

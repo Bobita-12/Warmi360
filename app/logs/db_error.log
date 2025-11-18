@@ -1,0 +1,47 @@
+[2025-11-03 04:11:21] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-03 04:11:34] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-03 04:11:34] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-03 04:11:34] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-03 04:11:42] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-03 04:11:55] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-03 04:11:56] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-03 04:12:16] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-03 18:41:56] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:42:11] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:42:12] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:42:13] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:42:13] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:42:13] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:42:55] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:43:34] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:43:46] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:43:58] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:45:37] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:45:37] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:46:17] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:46:19] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:46:58] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:46:59] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:47:04] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:47:53] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:48:05] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:52:11] No se pudieron leer las variables del archivo .env
+[2025-11-03 18:55:58] ❌ Error de conexión a la base de datos: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 18:59:58] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 19:00:29] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 19:00:30] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 19:00:31] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 19:00:32] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2025-11-03 23:00:20] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-05 04:41:35] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder
+[2025-11-05 04:41:56] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder
+[2025-11-05 04:56:19] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-05 15:42:34] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder
+[2025-11-05 15:42:57] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder
+[2025-11-05 15:43:18] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2002] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder
+[2025-11-05 15:43:44] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-05 15:43:44] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-05 15:43:44] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-05 15:43:44] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-05 22:47:12] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
+[2025-11-05 22:47:23] ❌ Error de conexión MySQL: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Host desconocido. 
