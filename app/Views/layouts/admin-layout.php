@@ -1,5 +1,5 @@
 <?php
-$base_url = "http://localhost/Warmi360-Refactor/public";
+$base_url = "http://warmi360-refactor-production.up.railway.app/public";
 include __DIR__ . "/../shared/header-admin.php";
 
 // Detectar la sección actual
