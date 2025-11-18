@@ -1,5 +1,10 @@
 <?php
 // ======================================================
+// ✅ AUTOLOAD DE COMPOSER (mantener primero)
+// ======================================================
+require_once __DIR__ . '/../vendor/autoload.php';
+
+// ======================================================
 // ✅ INICIO DE SESIÓN GLOBAL
 // ======================================================
 if (session_status() === PHP_SESSION_NONE) {
@@ -7,11 +12,22 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // ======================================================
-// ✅ AUTOLOAD Y CONFIGURACIÓN
+// ✅ CONFIGURACIÓN / BASE DE DATOS
 // ======================================================
-require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../config/database.php';
 
+// ======================================================
+// ✅ CONTROLADORES (requiere sólo si no usas autoload de namespaces)
+// Si tus controladores se cargan vía PSR-4 con composer, puedes quitar estos require_once.
+// ======================================================
+require_once __DIR__ . '/../app/Controllers/AuthController.php';
+require_once __DIR__ . '/../app/Controllers/AdminController.php';
+require_once __DIR__ . '/../app/Controllers/UsuariasController.php';
+require_once __DIR__ . '/../app/Controllers/ProductosController.php';
+
+// ======================================================
+// ✅ IMPORTS (namespaced classes)
+// ======================================================
 use App\Controllers\AuthController;
 use App\Controllers\AdminController;
 use App\Controllers\UsuariasController;
@@ -22,27 +38,37 @@ use App\Controllers\ProductosController;
 // ======================================================
 $db = Database::connect();
 if (!$db) {
+    http_response_code(500);
     die("<h2 style='color:red;text-align:center;margin-top:2rem;'>❌ Error: No se pudo conectar a la base de datos.</h2>");
 }
 
 // ======================================================
-// ✅ PARÁMETROS DE RUTA
+// ✅ PARÁMETROS DE RUTA (ahora base_url dinámico)
 // ======================================================
 $view       = $_GET['view']       ?? 'main';
 $section    = $_GET['section']    ?? null;
 $action     = $_GET['action']     ?? null;
-$base_url   = "http://localhost/Warmi360-Refactor/public";
+
+// Detectar protocolo y host para producir base_url correcto en nube
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'];
+$scriptPath = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\'); // ruta relativa al public
+$base_url = $protocol . '://' . $host . $scriptPath;
+
+// Si quieres forzar un subdirectorio específico (opcional):
+// $base_url .= '/Warmi360-Refactor/public';
 
 // ======================================================
-// ✅ RUTAS DE HEADER Y FOOTER
+// ✅ RUTAS DE HEADER Y FOOTER (usar rutas absolutas del proyecto)
 // ======================================================
 $headerMain  = __DIR__ . '/../app/Views/shared/header-main.php';
 $headerUser  = __DIR__ . '/../app/Views/shared/usuaria-header.php';
 $footer      = __DIR__ . '/../app/Views/shared/footer.php';
 
 // ======================================================
-// ⚙️ CONTROLADORES
+// ⚙️ CONTROLADORES (instancias)
 // ======================================================
+// Pasamos $db y $base_url si tus controladores lo requieren
 $usuariasController  = new UsuariasController($db, $base_url);
 $productosController = new ProductosController($db, $base_url);
 
@@ -50,8 +76,10 @@ $productosController = new ProductosController($db, $base_url);
 // ✅ BLOQUE DE PETICIONES AJAX USUARIAS Y PRODUCTOS
 // ======================================================
 if ($action) {
+    header('Content-Type: application/json');
+
+    // Nota: aquí validas que sólo rol 3 (admin) pueda ejecutar acciones AJAX.
     if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 3) {
-        header('Content-Type: application/json');
         echo json_encode(['success' => false, 'message' => 'Acceso no autorizado']);
         exit;
     }
@@ -89,9 +117,9 @@ if ($action) {
 switch ($view) {
     // 🌸 PÁGINAS PÚBLICAS
     case 'main':
-        include $headerMain;
+        if (file_exists($headerMain)) include $headerMain;
         include __DIR__ . '/../app/Views/main/index.php';
-        include $footer;
+        if (file_exists($footer)) include $footer;
         break;
 
     case 'tienda':
@@ -100,22 +128,36 @@ switch ($view) {
     case 'descargar':
     case 'politicas':
     case 'buzon':
-        include $headerMain;
+        if (file_exists($headerMain)) include $headerMain;
         $page = __DIR__ . "/../app/Views/main/{$view}.php";
         if (file_exists($page)) {
             include $page;
         } else {
             echo "<main class='pt-24 text-center text-xl text-text-dark'>Vista no encontrada</main>";
         }
-        include $footer;
+        if (file_exists($footer)) include $footer;
         break;
 
     // 🔐 AUTENTICACIÓN
-    case 'login':     include __DIR__ . '/../app/Views/auth/login.php'; break;
-    case 'register':  include __DIR__ . '/../app/Views/auth/register.php'; break;
-    case 'procesar-login': (new AuthController())->login(); break;
-    case 'registrar':       (new AuthController())->registrarUsuaria(); break;
-    case 'validar-dni':     (new AuthController())->validarDNI(); break;
+    case 'login':
+        include __DIR__ . '/../app/Views/auth/login.php';
+        break;
+
+    case 'register':
+        include __DIR__ . '/../app/Views/auth/register.php';
+        break;
+
+    case 'procesar-login':
+        (new AuthController())->login();
+        break;
+
+    case 'registrar':
+        (new AuthController())->registrarUsuaria();
+        break;
+
+    case 'validar-dni':
+        (new AuthController())->validarDNI();
+        break;
 
     // 👩‍🦰 DASHBOARD USUARIA
     case 'usuaria':
@@ -123,9 +165,9 @@ switch ($view) {
             header("Location: $base_url/?view=login");
             exit;
         }
-        include $headerUser;
+        if (file_exists($headerUser)) include $headerUser;
         include __DIR__ . '/../app/Views/user/dashboard.php';
-        include $footer;
+        if (file_exists($footer)) include $footer;
         break;
 
     // 🧠 PANEL ADMINISTRATIVO
@@ -157,6 +199,7 @@ switch ($view) {
         }
         $content = ob_get_clean();
 
+        // Layout admin que usa $content
         include __DIR__ . '/../app/Views/layouts/admin-layout.php';
         break;
 
@@ -170,10 +213,10 @@ switch ($view) {
     // 🚫 ERROR 404
     default:
         http_response_code(404);
-        include $headerMain;
+        if (file_exists($headerMain)) include $headerMain;
         echo "<main class='pt-24 text-center text-xl text-text-dark'>
                 <h1>404 - Página no encontrada</h1>
               </main>";
-        include $footer;
+        if (file_exists($footer)) include $footer;
         break;
 }
