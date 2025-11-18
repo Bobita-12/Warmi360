@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const listaCategorias = document.querySelector("#listaCategorias");
 
   // 🔗 URL base global
-  const baseUrl = window.baseUrl || "http://localhost/Warmi360-Refactor/public";
+  const baseUrl = window.baseUrl || "http://warmi360-refactor-production.up.railway.app/public";
 
   // 🔢 Variables globales
   let productosActuales = [];
