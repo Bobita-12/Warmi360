@@ -1,5 +1,5 @@
 // ✅ Dirección base del proyecto
-const base_url = "http://localhost/Warmi360-Refactor/public";
+const base_url = "http://warmi360-refactor-production.up.railway.app/public";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("loginForm");
