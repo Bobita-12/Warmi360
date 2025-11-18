@@ -540,3 +540,13 @@
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
+{
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "deploy": {
+    "environment": {
+      "DOCUMENT_ROOT": "public"
+    }
+  }
+}
