@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const baseUrl = "http://localhost/Warmi360-Refactor/public/index.php";
+  const baseUrl = "http://warmi360-refactor-production.up.railway.app/public/index.php";
   const modal = document.getElementById("modalUsuaria");
   const btnNueva = document.getElementById("btnNuevaUsuaria");
   const cancelarModal = document.getElementById("cancelarModal");
