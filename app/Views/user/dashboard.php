@@ -1,5 +1,5 @@
 <?php
-$base_url = "http://localhost/Warmi360-Refactor/public";
+$base_url = "http://warmi360-refactor-production.up.railway.app/public";
 
 // 📊 Datos del dashboard
 $totalUsuarias = $pdo->query("SELECT COUNT(*) FROM usuarios WHERE id_role = 1")->fetchColumn();
