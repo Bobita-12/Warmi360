@@ -12,7 +12,7 @@ class AdminController
     private PDO $db;
     private string $base_url;
 
-    public function __construct(PDO $db, string $base_url = '/Warmi360-Refactor/public')
+    public function __construct(PDO $db, string $base_url = '/http://warmi360-refactor-production.up.railway.app/public')
     {
         $this->db = $db;
         $this->base_url = $base_url;
